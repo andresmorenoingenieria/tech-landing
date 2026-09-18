@@ -1,0 +1,27 @@
+---
+const logos = ["NovaTech", "Bancoldex", "Solaris", "KinetIQ", "Vértice", "AurumLab"];
+---
+
+<section class="border-y border-ink-100 bg-ink-50/50 py-10">
+	<div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+		<p class="text-center text-sm font-medium text-ink-500">
+			Más de 2,000 equipos confían en Nexora
+		</p>
+		<div
+			class="relative mt-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]"
+		>
+			<ul class="flex w-max items-center gap-12 animate-marquee" aria-hidden="true">
+				{[...logos, ...logos].map((logo) => (
+					<li
+						class="flex shrink-0 items-center gap-2 text-lg font-semibold text-ink-400"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true">
+							<path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" />
+						</svg>
+						{logo}
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</section>

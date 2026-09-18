@@ -1,0 +1,64 @@
+---
+const faqs = [
+	{
+		question: "¿Necesito conocimientos técnicos para usar Nexora?",
+		answer:
+			"No. Nexora está diseñada para que cualquier persona de tu equipo pueda crear paneles, automatizaciones y flujos sin escribir una sola línea de código.",
+	},
+	{
+		question: "¿Puedo cancelar mi suscripción en cualquier momento?",
+		answer:
+			"Sí. No tenemos permanencia ni penalizaciones. Puedes cambiar de plan o cancelar desde tu panel de control en cualquier momento.",
+	},
+	{
+		question: "¿Cómo funciona la prueba gratuita de 14 días?",
+		answer:
+			"El plan Profesional incluye 14 días de prueba sin coste y sin necesidad de tarjeta de crédito. Cuando termine, puedes pagar o volver al plan gratuito.",
+	},
+	{
+		question: "¿Dónde se almacenan mis datos?",
+		answer:
+			"Puedes elegir la región de almacenamiento (UE, EE. UU. o Latinoamérica). Todos los datos se cifran con AES-256 tanto en reposo como en tránsito.",
+	},
+	{
+		question: "¿Ofrecéis despliegue en la nube de nuestra empresa?",
+		answer:
+			"Sí, el plan Empresa permite desplegar Nexora en tu propia infraestructura (AWS, Azure, GCP o entornos on-premise) con SSO, auditoría y SLA garantizado.",
+	},
+];
+---
+
+<section id="faq" class="scroll-mt-20 py-20 sm:py-28">
+	<div class="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
+		<div class="text-center">
+			<p class="text-sm font-semibold uppercase tracking-widest text-brand-600">
+				FAQ
+			</p>
+			<h2 class="mt-3 text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+				Preguntas frecuentes
+			</h2>
+			<p class="mt-4 text-base leading-relaxed text-ink-500 sm:text-lg">
+				¿Tienes otra duda? Escríbenos y te respondemos en menos de 24 horas.
+			</p>
+		</div>
+
+		<div class="mt-12 divide-y divide-ink-100 rounded-2xl border border-ink-100 bg-white">
+			{faqs.map((faq) => (
+				<details class="group px-6 py-5 open:bg-ink-50/50">
+					<summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-ink-900 sm:text-base [&::-webkit-details-marker]:hidden">
+						{faq.question}
+						<span class="grid size-7 shrink-0 place-items-center rounded-full border border-ink-200 text-ink-500 transition-transform group-open:rotate-45">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="size-4" aria-hidden="true">
+								<path d="M12 5v14" />
+								<path d="M5 12h14" />
+							</svg>
+						</span>
+					</summary>
+					<p class="mt-3 pb-2 text-sm leading-relaxed text-ink-500 sm:text-base">
+						{faq.answer}
+					</p>
+				</details>
+			))}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,105 @@
+---
+import Icon from "./Icon.astro";
+
+const columns = [
+	{
+		title: "Producto",
+		links: [
+			{ href: "#producto", label: "Características" },
+			{ href: "#beneficios", label: "Beneficios" },
+			{ href: "#precios", label: "Precios" },
+			{ href: "#faq", label: "Preguntas frecuentes" },
+		],
+	},
+	{
+		title: "Recursos",
+		links: [
+			{ href: "#", label: "Documentación" },
+			{ href: "#", label: "API" },
+			{ href: "#", label: "Blog" },
+			{ href: "#", label: "Estado del sistema" },
+		],
+	},
+	{
+		title: "Empresa",
+		links: [
+			{ href: "#", label: "Sobre nosotros" },
+			{ href: "#", label: "Empleo" },
+			{ href: "#contacto", label: "Contacto" },
+			{ href: "#", label: "Privacidad" },
+		],
+	},
+];
+
+const socials = [
+	{ name: "GitHub", href: "https://github.com", icon: "github" },
+	{ name: "X (Twitter)", href: "https://twitter.com", icon: "twitter" },
+	{ name: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
+];
+---
+
+<footer class="border-t border-ink-100 bg-white">
+	<div class="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+		<div class="grid grid-cols-2 gap-8 md:grid-cols-5">
+			<div class="col-span-2">
+				<a href="/" class="flex items-center gap-2.5" aria-label="Nexora — inicio">
+					<span class="grid size-9 place-items-center rounded-lg bg-brand-600 text-white">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true">
+							<path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" />
+							<path d="m3.3 7.3 8.7 4.8 8.7-4.8" />
+							<path d="M12 12.1V22" />
+						</svg>
+					</span>
+					<span class="text-lg font-semibold tracking-tight">Nexora</span>
+				</a>
+				<p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-500">
+					La plataforma tecnológica que une sistemas, datos e IA para equipos
+					que quieren ir más rápido.
+				</p>
+				<ul class="mt-5 flex items-center gap-2">
+					{socials.map((social) => (
+						<li>
+							<a
+								href={social.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label={social.name}
+								class="grid size-9 place-items-center rounded-lg border border-ink-200 text-ink-500 transition-colors hover:border-brand-300 hover:text-brand-600"
+							>
+								<Icon name={social.icon} class="size-4" />
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			{columns.map((column) => (
+				<nav aria-label={column.title}>
+					<h3 class="text-sm font-semibold text-ink-900">{column.title}</h3>
+					<ul class="mt-4 space-y-3">
+						{column.links.map((link) => (
+							<li>
+								<a
+									href={link.href}
+									class="text-sm text-ink-500 transition-colors hover:text-brand-600"
+								>
+									{link.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			))}
+		</div>
+
+		<div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-ink-100 pt-8 sm:flex-row">
+			<p class="text-xs text-ink-400">
+				© {new Date().getFullYear()} Nexora. Todos los derechos reservados.
+			</p>
+			<p class="text-xs text-ink-400">
+				Hecho con <span class="text-brand-600">Astro</span> y{" "}
+				<span class="text-brand-600">Tailwind CSS</span>
+			</p>
+		</div>
+	</div>
+</footer>

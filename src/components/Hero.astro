@@ -1,0 +1,108 @@
+---
+const trustPoints = [
+	"Sin tarjeta de crédito",
+	"Prueba gratuita de 14 días",
+	"Configuración en minutos",
+];
+---
+
+<section class="relative overflow-hidden bg-ink-950 text-white">
+	<div
+		class="pointer-events-none absolute inset-0"
+		aria-hidden="true"
+		style="background-image: radial-gradient(60rem 30rem at 70% -10%, rgba(99,102,241,0.35), transparent 60%), radial-gradient(40rem 25rem at 10% 110%, rgba(168,85,247,0.25), transparent 60%);"
+	>
+		<div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 48px 48px;"></div>
+	</div>
+
+	<div class="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24 lg:px-8">
+		<p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-brand-200 sm:text-sm">
+			<span class="relative flex size-2">
+				<span class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+				<span class="relative inline-flex size-2 rounded-full bg-emerald-400"></span>
+			</span>
+			Nuevo: Nexora AI ya está disponible
+		</p>
+
+		<h1 class="mt-6 max-w-3xl text-center text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
+			Tecnología que impulsa tu negocio al{" "}
+			<span class="bg-gradient-to-r from-brand-400 to-violet-400 bg-clip-text text-transparent">
+				siguiente nivel
+			</span>
+		</h1>
+
+		<p class="mt-6 max-w-2xl text-center text-base leading-relaxed text-ink-300 sm:text-lg">
+			Nexora centraliza tus sistemas, datos e inteligencia artificial en una
+			única plataforma segura y escalable. Olvídate de la complejidad técnica y
+			concéntrate en crecer.
+		</p>
+
+		<div class="mt-8 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+			<a
+				href="#precios"
+				class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-glow transition-colors hover:bg-brand-500 sm:w-auto"
+			>
+				Empieza gratis
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true">
+					<path d="M5 12h14" />
+					<path d="m13 6 6 6-6 6" />
+				</svg>
+			</a>
+			<a
+				href="#producto"
+				class="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4" aria-hidden="true">
+					<path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86Z" />
+				</svg>
+				Ver demo
+			</a>
+		</div>
+
+		<ul class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+			{trustPoints.map((point) => (
+				<li class="flex items-center gap-1.5 text-sm text-ink-400">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-emerald-400" aria-hidden="true">
+						<path d="M20 6 9 17l-5-5" />
+					</svg>
+					{point}
+				</li>
+			))}
+		</ul>
+
+		<div class="mt-14 w-full max-w-4xl">
+			<div class="relative mx-auto rounded-xl border border-white/10 bg-ink-900/80 shadow-2xl backdrop-blur animate-float">
+				<div class="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
+					<span class="size-3 rounded-full bg-red-400/80" aria-hidden="true"></span>
+					<span class="size-3 rounded-full bg-amber-400/80" aria-hidden="true"></span>
+					<span class="size-3 rounded-full bg-emerald-400/80" aria-hidden="true"></span>
+				</div>
+				<div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-3 sm:p-6">
+					<div class="space-y-3 rounded-lg bg-white/5 p-4">
+						<p class="text-xs font-medium uppercase tracking-wider text-ink-400">Rendimiento</p>
+						<p class="text-3xl font-bold text-white">99.98%</p>
+						<div class="h-2 w-full overflow-hidden rounded-full bg-white/10" role="presentation">
+							<div class="h-full w-[98%] rounded-full bg-gradient-to-r from-brand-500 to-violet-500"></div>
+						</div>
+					</div>
+					<div class="space-y-3 rounded-lg bg-white/5 p-4">
+						<p class="text-xs font-medium uppercase tracking-wider text-ink-400">Proyectos activos</p>
+						<p class="text-3xl font-bold text-white">1,240</p>
+						<div class="flex items-center gap-1 text-emerald-400" aria-label="Tendencia positiva">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true">
+								<path d="M3 17l6-6 4 4 8-8" />
+								<path d="M14 7h7v7" />
+							</svg>
+							<span class="text-xs font-medium">+24% este mes</span>
+						</div>
+					</div>
+					<div class="space-y-3 rounded-lg bg-white/5 p-4">
+						<p class="text-xs font-medium uppercase tracking-wider text-ink-400">Incidentes</p>
+						<p class="text-3xl font-bold text-white">0</p>
+						<p class="text-xs text-ink-400">En las últimas 24 horas</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,103 @@
+---
+const navItems = [
+	{ href: "#producto", label: "Producto" },
+	{ href: "#beneficios", label: "Beneficios" },
+	{ href: "#precios", label: "Precios" },
+	{ href: "#faq", label: "FAQ" },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-ink-100 bg-white/80 backdrop-blur-md">
+	<nav
+		class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
+		aria-label="Navegación principal"
+	>
+		<a href="/" class="flex items-center gap-2.5" aria-label="Nexora — inicio">
+			<span class="grid size-9 place-items-center rounded-lg bg-brand-600 text-white">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-5" aria-hidden="true">
+					<path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" />
+					<path d="m3.3 7.3 8.7 4.8 8.7-4.8" />
+					<path d="M12 12.1V22" />
+				</svg>
+			</span>
+			<span class="text-lg font-semibold tracking-tight">Nexora</span>
+		</a>
+
+		<ul class="hidden items-center gap-1 md:flex">
+			{navItems.map((item) => (
+				<li>
+					<a
+						href={item.href}
+						class="rounded-lg px-3 py-2 text-sm font-medium text-ink-600 transition-colors hover:bg-ink-50 hover:text-ink-900"
+					>
+						{item.label}
+					</a>
+				</li>
+			))}
+		</ul>
+
+		<div class="hidden md:block">
+			<a
+				href="#precios"
+				class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
+			>
+				Empieza gratis
+			</a>
+		</div>
+
+		<button
+			id="menu-button"
+			type="button"
+			class="inline-flex size-10 items-center justify-center rounded-lg text-ink-700 transition-colors hover:bg-ink-50 md:hidden"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
+			aria-label="Abrir menú"
+		>
+			<svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="size-6" aria-hidden="true">
+				<path d="M4 6h16" />
+				<path d="M4 12h16" />
+				<path d="M4 18h16" />
+			</svg>
+		</button>
+	</nav>
+
+	<div id="mobile-menu" class="hidden border-t border-ink-100 bg-white px-4 pb-4 pt-2 md:hidden">
+		<ul class="flex flex-col">
+			{navItems.map((item) => (
+				<li>
+					<a
+						href={item.href}
+						class="block rounded-lg px-3 py-2.5 text-base font-medium text-ink-700 transition-colors hover:bg-ink-50 hover:text-ink-900"
+					>
+						{item.label}
+					</a>
+				</li>
+			))}
+		</ul>
+		<a
+			href="#precios"
+			class="mt-3 flex items-center justify-center rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700"
+		>
+			Empieza gratis
+		</a>
+	</div>
+</header>
+
+<script>
+	const button = document.getElementById("menu-button");
+	const menu = document.getElementById("mobile-menu");
+
+	function closeMenu() {
+		menu?.classList.add("hidden");
+		button?.setAttribute("aria-expanded", "false");
+		button?.setAttribute("aria-label", "Abrir menú");
+	}
+
+	button?.addEventListener("click", () => {
+		const isOpen = menu?.classList.toggle("hidden") === false;
+		button.setAttribute("aria-expanded", String(isOpen));
+		button.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+	});
+
+	menu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+</script>
